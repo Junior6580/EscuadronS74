@@ -1,5 +1,6 @@
+<?php include 'navbar.php'; ?>
 <?php
-include_once '../../modelo/conexion.php';
+include_once '../modelo/conexion.php';
 $objeto = new Conexion();
 $conexion = $objeto->Conectar();
 
