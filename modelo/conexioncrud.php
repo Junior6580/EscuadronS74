@@ -3,7 +3,7 @@
 $host = "localhost";
 $user = "root";
 $clave = "";
-$bd = "senas";
+$bd = "instituto";
 
-$conectar = new mysqli($host, $user, $clave, $bd );
+$conectar = new mysqli($host, $user, $clave, $bd);
 ?>

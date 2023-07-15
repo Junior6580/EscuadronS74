@@ -1,8 +1,7 @@
-body {
-    margin-left: 0.5%;
-    margin-right: 0.5%;
-}
-
-.navbar-green {
-    background-color: green;
+#home {
+    background-image: url('../img/home.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #000000;
+    height: 599px;
 }
