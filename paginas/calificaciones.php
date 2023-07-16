@@ -41,7 +41,7 @@ foreach ($personas as $persona) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alumnos</title>
+    <title>Calificaciones</title>
 </head>
 
 <body>
@@ -62,9 +62,15 @@ foreach ($personas as $persona) {
                                     <th>Docente Id</th>
                                     <th>Actividad Id</th>
                                     <th>Promedio</th>
-                                    <th style="width: 200px;"><a href="nuevo_docente.php"
-                                            class="btn btn-success btn-sm"><i class="fa-solid fa-circle-plus"
-                                                style="color: #050505;"></i></a></th>
+                                    <?php
+                                    if ($rol == 1 || $rol == 2) {
+                                        ?>
+                                        <th style="width: 200px;"><a href="nueva_calificacion.php"
+                                                class="btn btn-success btn-sm"><i class="fa-solid fa-circle-plus"
+                                                    style="color: #050505;"></i></a></th>
+                                        <?php
+                                    }
+                                    ?>
                             </thead>
                             <tbody>
 
@@ -109,12 +115,17 @@ foreach ($personas as $persona) {
                                         <td>
                                             <?php echo $filtro['promedio'] ?>
                                         </td>
-
-                                        <td><a href="editar_calificaciones.php?id=<?php echo $filtro['id']; ?>"
-                                                class="btn btn-info btn-sm"><i class="fas fa-edit"></i></a>
-                                            <a href="eliminar_docentes.php?id=<?php echo $filtro['id']; ?>"
-                                                class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
-                                        </td>
+                                        <?php
+                                        if ($rol == 1 || $rol == 2) {
+                                            ?>
+                                            <td><a href="editar_calificaciones.php?id=<?php echo $filtro['id']; ?>"
+                                                    class="btn btn-info btn-sm"><i class="fas fa-edit"></i></a>
+                                                <a href="elimina_calificaciones.php?id=<?php echo $filtro['id']; ?>"
+                                                    class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></a>
+                                            </td>
+                                            <?php
+                                        }
+                                        ?>
                                     </tr>
                                     <?php
                                 }

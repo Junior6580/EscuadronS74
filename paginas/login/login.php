@@ -17,7 +17,10 @@ require_once '../../controlador/js.php';
 <body>
     <nav class="navbar navbar-expand-lg bg-success">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand" href="home.php"><i class="fa-solid fa-graduation-cap  fa-xs"
+                    style="color: #000000;">
+
+                </i> Escuela Cultural</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -29,9 +32,9 @@ require_once '../../controlador/js.php';
                 </ul>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="../../index.php"><i class="fa-solid fa-house fa-xs"
-                                style="color: #000000;">
-                                Bienvenido</i></a>
+                        <a class="nav-link" href="../../index.php"><i class="fa-solid fa-house fa-2xs"
+                                style="color: #000000;"></i>
+                            Bienvenido</a>
                     </li>
                 </ul>
             </div>
@@ -49,8 +52,8 @@ require_once '../../controlador/js.php';
                                     <div class="row mb-3">
 
                                         <div class="row mb-3">
-                                            <label for="email" class="col-md-4 col-form-label text-md-end">Correo
-                                                Electronico</label>
+                                            <label for="email"
+                                                class="col-md-4 col-form-label text-md-end">Usuario</label>
 
                                             <div class="col-md-6">
                                                 <input class="form-control" type="text" name="usuario" required>
@@ -67,7 +70,8 @@ require_once '../../controlador/js.php';
                                         </div>
                                         <div class="row mb-0">
                                             <div class="col-md-10 offset-md-6">
-                                                <input class="btn btn-primary" type="submit" value="Login">
+                                                <input class="btn btn-primary" name="btnloginx" type="submit"
+                                                    value="Login">
                                             </div>
                                         </div>
                                     </div>

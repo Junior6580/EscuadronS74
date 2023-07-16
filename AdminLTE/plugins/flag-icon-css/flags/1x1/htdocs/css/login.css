@@ -1,0 +1,31 @@
+#js {
+	margin-top: 10%;
+	color: #000000;
+}
+
+#jm {
+	background-color: transparent;
+	border: 1px solid rgb(0, 0, 0);
+	border-radius: 3%;
+	color: #000000;
+	padding-bottom: 5%;
+}
+
+body {
+	background-image: url('../img/imagendos.jpg');
+	background-size: cover;
+	background-position: center;
+	color: #000000;
+	height: 700px;
+}
+
+.mensaje {
+	width: 100%;
+	max-width: 350px;
+	margin: auto;
+	margin-top: 20px;
+	text-align: left;
+	padding: 6px;
+	color: red;
+
+}

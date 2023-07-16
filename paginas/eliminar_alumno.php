@@ -1,24 +1,27 @@
-<?php include 'navbar.php'; ?>
-<?php
-include_once '../modelo/conexion.php';
-$objeto = new Conexion();
-$conexion = $objeto->Conectar();
+<?php include 'navbar.php';
 
-if (isset($_GET['id'])) {
-    $alumno_id = $_GET['id'];
+if ($rol == 1) {
+    include_once '../modelo/conexion.php';
+    $objeto = new Conexion();
+    $conexion = $objeto->Conectar();
 
-    // Eliminar el alumno de la base de datos
-    $consulta = "DELETE FROM alumnos WHERE id = :alumno_id";
-    $resultado = $conexion->prepare($consulta);
-    $resultado->bindParam(':alumno_id', $alumno_id);
-    $resultado->execute();
+    if (isset($_GET['id'])) {
+        $alumno_id = $_GET['id'];
 
-    // Realizar cualquier otra acción necesaria, como mostrar un mensaje de éxito o redireccionar a otra página
-    echo "<script> alert('Alumno eliminado correctamente');
+        $consulta = "DELETE FROM alumnos WHERE id = :alumno_id";
+        $resultado = $conexion->prepare($consulta);
+        $resultado->bindParam(':alumno_id', $alumno_id);
+        $resultado->execute();
+
+        echo "<script> alert('Alumno eliminado correctamente');
     location.href = 'alumnos.php';</script>";
+    } else {
+        echo "<script> alert('ID de alumno no válido');
+    location.href = 'alumnos.php';</script>";
+    }
+
 } else {
-    // Si no se proporciona un ID válido, puedes redireccionar a una página de error o tomar otra acción
-    echo "<script> alert('ID de alumno no válido');
-    location.href = 'alumnos.php';</script>";
+    echo "<script> alert('No Autorizado😡!!');
+                    location.href = 'home.php';</script>";
 }
 ?>
