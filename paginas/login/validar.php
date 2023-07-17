@@ -2,19 +2,30 @@
 $usuario = $_POST['usuario'];
 $contraseña = $_POST['contraseña'];
 
-$conexion = mysqli_connect("localhost", "root", "", "instituto");
-$consulta = "SELECT * FROM usuarios WHERE usuario = '$usuario' and contraseña='$contraseña'";
-$resultado = mysqli_query($conexion, $consulta);
+include_once '../../modelo/conexionlogin.php';
+
+$consulta = "SELECT * FROM usuarios WHERE usuario = '$usuario'";
+$resultado = mysqli_query($conn, $consulta);
 
 $filas = mysqli_num_rows($resultado);
 
 if ($filas > 0) {
-    session_start();
-    $_SESSION['nombredelusuario'] = $usuario;
-    header("location:../home.php");
+    $row = mysqli_fetch_assoc($resultado);
+    $contraseñaEncriptada = $row['contraseña'];
+
+    if (password_verify($contraseña, $contraseñaEncriptada)) {
+        session_start();
+        $_SESSION['nombredelusuario'] = $usuario;
+        header("location:../home.php");
+    } else {
+        echo "<script> alert('contraseña incorrectos😡!!');
+                    location.href = 'login.php';</script>";
+    }
 } else {
-    echo "Error en la autenticacion";
+    echo "<script> alert('Error en la autenticación!!');
+                    location.href = 'login.php';</script>";
 }
+
 mysqli_free_result($resultado);
-mysqli_close($conexion);
+mysqli_close($conn);
 ?>

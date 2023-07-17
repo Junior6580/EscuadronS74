@@ -108,9 +108,9 @@ if (isset($_SESSION['nombredelusuario'])) {
 
 
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="">
+                            <a class="dropdown-item" href="usuarios.php">
                                 <i class="fa-solid fa-user fa-2xs" style="color: #000000;"> </i>Usuarios</a>
-                            <a class="dropdown-item" href="">
+                            <a class="dropdown-item" href="personas.php">
                                 <i class="fa-solid fa-person fa-2xs" style="color: #000000;"> </i>Personas</a>
 
 
