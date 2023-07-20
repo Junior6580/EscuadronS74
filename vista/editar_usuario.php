@@ -112,7 +112,7 @@ if ($rol == 1) {
               location.href = 'editar_usuario.php';</script>";
             } else {
                 $ContraseñaEncriptada = password_hash($Contraseña, PASSWORD_DEFAULT);
-                $query = mysqli_query($conectar, "UPDATE usuarios SET persona_id = '$Idpersona', usuario = '$Usuario', contrasena = '$Contraseña', rol_id = '$Rol' WHERE id = '$usuario_id'");
+                $query = mysqli_query($conectar, "UPDATE usuarios SET persona_id = '$Idpersona', usuario = '$Usuario', contrasena = '$ContraseñaEncriptada', rol_id = '$Rol' WHERE id = '$usuario_id'");
 
                 if ($query) {
                     echo "<script> alert('Usuario actualizado correctamente');
