@@ -4,7 +4,6 @@ include_once '../modelo/conexion.php';
 $objeto = new Conexion();
 $conexion = $objeto->Conectar();
 
-// Query to fetch calificaciones
 $consultaCalificaciones = "SELECT * FROM calificacions";
 $resultadoCalificaciones = $conexion->prepare($consultaCalificaciones);
 $resultadoCalificaciones->execute();

@@ -190,7 +190,7 @@ $promediosJson = json_encode($promedios);
     var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
 
     var areaChartData = {
-        labels: <?php echo json_encode($nombresAlumnos); ?>,
+        labels: <?php echo json_encode($jornadasDic); ?>,
 
         datasets: [{
             label: 'Promedio de alumnos',
